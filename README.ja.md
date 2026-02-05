@@ -1,476 +1,168 @@
-<div align="center">
+---
 
-![new-api](/web/public/logo.png)
+# L-Exchange ホワイトペーパー：分散型コンピュート流動性プロトコル
 
-# New API
+**L-Exchange Whitepaper: The Decentralized Compute Liquidity Protocol**
 
-🍥 **次世代大規模モデルゲートウェイとAI資産管理システム**
-
-<p align="center">
-  <a href="./README.zh.md">中文</a> | 
-  <a href="./README.md">English</a> | 
-  <a href="./README.fr.md">Français</a> | 
-  <strong>日本語</strong>
-</p>
-
-<p align="center">
-  <a href="https://raw.githubusercontent.com/Calcium-Ion/new-api/main/LICENSE">
-    <img src="https://img.shields.io/github/license/Calcium-Ion/new-api?color=brightgreen" alt="license">
-  </a>
-  <a href="https://github.com/Calcium-Ion/new-api/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Calcium-Ion/new-api?color=brightgreen&include_prereleases" alt="release">
-  </a>
-  <a href="https://github.com/users/Calcium-Ion/packages/container/package/new-api">
-    <img src="https://img.shields.io/badge/docker-ghcr.io-blue" alt="docker">
-  </a>
-  <a href="https://hub.docker.com/r/CalciumIon/new-api">
-    <img src="https://img.shields.io/badge/docker-dockerHub-blue" alt="docker">
-  </a>
-  <a href="https://goreportcard.com/report/github.com/Calcium-Ion/new-api">
-    <img src="https://goreportcard.com/badge/github.com/Calcium-Ion/new-api" alt="GoReportCard">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://trendshift.io/repositories/8227" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/8227" alt="Calcium-Ion%2Fnew-api | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
-  </a>
-  <br>
-  <a href="https://hellogithub.com/repository/QuantumNous/new-api" target="_blank">
-    <img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=539ac4217e69431684ad4a0bab768811&claim_uid=tbFPfKIDHpc4TzR" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" />
-  </a>
-  <a href="https://www.producthunt.com/products/new-api/launches/new-api?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-new-api" target="_blank" rel="noopener noreferrer">
-    <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047693&theme=light&t=1769577875005" alt="New API - All-in-one AI asset management gateway. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="#-クイックスタート">クイックスタート</a> •
-  <a href="#-主な機能">主な機能</a> •
-  <a href="#-デプロイ">デプロイ</a> •
-  <a href="#-ドキュメント">ドキュメント</a> •
-  <a href="#-ヘルプサポート">ヘルプ</a>
-</p>
-
-</div>
-
-## 📝 プロジェクト説明
-
-> [!NOTE]  
-> 本プロジェクトは、[One API](https://github.com/songquanpeng/one-api)をベースに二次開発されたオープンソースプロジェクトです
-
-> [!IMPORTANT]  
-> - 本プロジェクトは個人学習用のみであり、安定性の保証や技術サポートは提供しません。
-> - ユーザーは、OpenAIの[利用規約](https://openai.com/policies/terms-of-use)および**法律法規**を遵守する必要があり、違法な目的で使用してはいけません。
-> - [《生成式人工智能服务管理暂行办法》](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)の要求に従い、中国地域の公衆に未登録の生成式AI サービスを提供しないでください。
+**バージョン：** 1.0 (Genesis)
+**ステータス：** ベータテスト中 (Beta)
 
 ---
 
-## 🤝 信頼できるパートナー
+## 要約 (Abstract)
 
-<p align="center">
-  <em>順不同</em>
-</p>
+L-Exchange は、**金融ゲーム理論モデル**を導入した世界初の AI コンピュート分配プラットフォームです。従来の API リレーサービスに存在する「価格設定の硬直性」「ユーザー利益の分断」「リソース配分の不効率」といった問題の解決に取り組んでいます。
 
-<p align="center">
-  <a href="https://www.cherry-ai.com/" target="_blank">
-    <img src="./docs/images/cherry-studio.png" alt="Cherry Studio" height="80" />
-  </a>
-  <a href="https://bda.pku.edu.cn/" target="_blank">
-    <img src="./docs/images/pku.png" alt="北京大学" height="80" />
-  </a>
-  <a href="https://www.compshare.cn/?ytag=GPU_yy_gh_newapi" target="_blank">
-    <img src="./docs/images/ucloud.png" alt="UCloud 優刻得" height="80" />
-  </a>
-  <a href="https://www.aliyun.com/" target="_blank">
-    <img src="./docs/images/aliyun.png" alt="Alibaba Cloud" height="80" />
-  </a>
-  <a href="https://io.net/" target="_blank">
-    <img src="./docs/images/io-net.png" alt="IO.NET" height="80" />
-  </a>
-</p>
+**デュアルトークン経済モデル (Dual-Token Economics)** を導入することで、L-Exchange は従来の「使用料金支払い」モデルを **「消費即投資 (Consume-to-Earn)」** モデルに再構築しました。ここでは、コンピュート（Compute）はもはや単なる消費財ではなく、測定可能で、取引可能で、価値増加が見込める金融資産です。すべての開発者は単なる消費者ではなく、プラットフォームの**流動性提供者**かつ**株主**となります。
 
 ---
 
-## 🙏 特別な感謝
+## 1. ビジョンと背景 (Vision & Background)
 
-<p align="center">
-  <a href="https://www.jetbrains.com/?from=new-api" target="_blank">
-    <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" alt="JetBrains Logo" width="120" />
-  </a>
-</p>
+### 1.1 業界の課題
 
-<p align="center">
-  <strong>感謝 <a href="https://www.jetbrains.com/?from=new-api">JetBrains</a> が本プロジェクトに無料のオープンソース開発ライセンスを提供してくれたことに感謝します</strong>
-</p>
+現在の LLM API リレー市場は、3 つの主要な問題に直面しています：
 
----
+1. **ゼロサムゲーム：** ユーザーとリレー業者は純粋な売買関係です。ユーザーはより安い価格を望み、業者はより高い利益を望み、利益が対立しています。
+2. **価値の喪失：** 初期ユーザーはプラットフォームに多くのテストデータと評判をもたらしましたが、プラットフォームが成長した後、プラットフォーム成長の恩恵を受けることができません。
+3. **希少性配分の非効率性：** GPT-5 や Sora などの希少で高コストなモデルがリリースされる場合、従来のプラットフォームは価格上昇またはランダムキューイングを通じてクォータを配分することが多く、公平で効率的な市場メカニズムが不足しています。
 
-## 🚀 クイックスタート
+### 1.2 当社のソリューション
 
-### Docker Composeを使用（推奨）
+L-Exchange は、**コンピュートベースのマイクロ金融市場**を構築しました。プラットフォームの「利益」と「ガバナンス権」をトークン化（Tokenization）し、価格設定権を市場に返却します。
 
-```bash
-# プロジェクトをクローン
-git clone https://github.com/QuantumNous/new-api.git
-cd new-api
-
-# docker-compose.yml 設定を編集
-nano docker-compose.yml
-
-# サービスを起動
-docker-compose up -d
-```
-
-<details>
-<summary><strong>Dockerコマンドを使用</strong></summary>
-
-```bash
-# 最新のイメージをプル
-docker pull calciumion/new-api:latest
-
-# SQLiteを使用（デフォルト）
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-
-# MySQLを使用
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-```
-
-> **💡 ヒント:** `-v ./data:/data` は現在のディレクトリの `data` フォルダにデータを保存します。絶対パスに変更することもできます：`-v /your/custom/path:/data`
-
-</details>
+* **開発者向け：** API を使用するだけでプラットフォームトークンを獲得でき、実際の使用コストを大幅に削減できます。
+* **投機家向け：** 流動性提供と予測市場への参加を通じて、金融手段で利益を得ることができます。
+* **エコシステム向け：** デフレモデルを通じて、外部収入をトークン価値に変換し、永続的な成長を実現します。
 
 ---
 
-🎉 デプロイが完了したら、`http://localhost:3000` にアクセスして使用を開始してください！
+## 2. 経済モデル (The Economic Model)
 
-📖 その他のデプロイ方法については[デプロイガイド](https://docs.newapi.pro/ja/docs/installation)を参照してください。
+L-Exchange は、**「ステーブルコイン + ガバナンストークン」** のデュアルトラック分離メカニズムを採用し、コンピュートサービスの安定性と資産の投機属性の共存を確保しています。
 
----
+### 2.1 L-Credits (クレジット/燃料)
 
-## 📚 ドキュメント
+* **定義：** プラットフォームの通用計価単位および決済燃料。
+* **ペッグ：** 1 Credit = 1.00 USD (USDT)。
+* **用途：** API 呼び出し費用（例：GPT-4o トークン消費）の支払いのみに使用。
+* **取得方法：** 法定通貨をチャージするか、二次市場で L-Coin を売却して取得。
+* **安定性：** 硬直的な償還、価格変動なし。
 
-<div align="center">
+### 2.2 L-Coin (LCO / コンピュートトークン)
 
-### 📖 [公式ドキュメント](https://docs.newapi.pro/ja/docs) | [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/QuantumNous/new-api)
+* **定義：** プラットフォーム価値、ガバナンス権、投機属性を担う中核資産。
+* **供給量：** 総供給量は固定 1,000 万枚、永遠に増発なし。
+* **価値捕捉：** L-Coin の価値はプラットフォームの API ビジネス利益に直接連動（リバイバル・バーン・メカニズムを参照）。
 
-</div>
+### 2.3 循環流通システム (The Loop)
 
-**クイックナビゲーション:**
-
-| カテゴリ | リンク |
-|------|------|
-| 🚀 デプロイガイド | [インストールドキュメント](https://docs.newapi.pro/ja/docs/installation) |
-| ⚙️ 環境設定 | [環境変数](https://docs.newapi.pro/ja/docs/installation/config-maintenance/environment-variables) |
-| 📡 APIドキュメント | [APIドキュメント](https://docs.newapi.pro/ja/docs/api) |
-| ❓ よくある質問 | [FAQ](https://docs.newapi.pro/ja/docs/support/faq) |
-| 💬 コミュニティ交流 | [交流チャネル](https://docs.newapi.pro/ja/docs/support/community-interaction) |
-
----
-
-## ✨ 主な機能
-
-> 詳細な機能については[機能説明](https://docs.newapi.pro/ja/docs/guide/wiki/basic-concepts/features-introduction)を参照してください。
-
-### 🎨 コア機能
-
-| 機能 | 説明 |
-|------|------|
-| 🎨 新しいUI | モダンなユーザーインターフェースデザイン |
-| 🌍 多言語 | 中国語、英語、フランス語、日本語をサポート |
-| 🔄 データ互換性 | オリジナルのOne APIデータベースと完全に互換性あり |
-| 📈 データダッシュボード | ビジュアルコンソールと統計分析 |
-| 🔒 権限管理 | トークングループ化、モデル制限、ユーザー管理 |
-
-### 💰 支払いと課金
-
-- ✅ オンライン充電（EPay、Stripe）
-- ✅ モデルの従量課金
-- ✅ キャッシュ課金サポート（OpenAI、Azure、DeepSeek、Claude、Qwenなどすべてのサポートされているモデル）
-- ✅ 柔軟な課金ポリシー設定
-
-### 🔐 認証とセキュリティ
-
-- 😈 Discord認証ログイン
-- 🤖 LinuxDO認証ログイン
-- 📱 Telegram認証ログイン
-- 🔑 OIDC統一認証
-- 🔍 Key使用量クォータ照会（[neko-api-key-tool](https://github.com/Calcium-Ion/neko-api-key-tool)と併用）
-
-
-
-### 🚀 高度な機能
-
-**APIフォーマットサポート:**
-- ⚡ [OpenAI Responses](https://docs.newapi.pro/ja/docs/api/ai-model/chat/openai/create-response)
-- ⚡ [OpenAI Realtime API](https://docs.newapi.pro/ja/docs/api/ai-model/realtime/create-realtime-session)（Azureを含む）
-- ⚡ [Claude Messages](https://docs.newapi.pro/ja/docs/api/ai-model/chat/create-message)
-- ⚡ [Google Gemini](https://doc.newapi.pro/ja/api/google-gemini-chat)
-- 🔄 [Rerankモデル](https://docs.newapi.pro/ja/docs/api/ai-model/rerank/create-rerank)（Cohere、Jina）
-
-**インテリジェントルーティング:**
-- ⚖️ チャネル重み付けランダム
-- 🔄 失敗自動リトライ
-- 🚦 ユーザーレベルモデルレート制限
-
-**フォーマット変換:**
-- 🔄 **OpenAI Compatible ⇄ Claude Messages**
-- 🔄 **OpenAI Compatible → Google Gemini**
-- 🔄 **Google Gemini → OpenAI Compatible** - テキストのみ、関数呼び出しはまだサポートされていません
-- 🚧 **OpenAI Compatible ⇄ OpenAI Responses** - 開発中
-- 🔄 **思考からコンテンツへの機能**
-
-**Reasoning Effort サポート:**
-
-<details>
-<summary>詳細設定を表示</summary>
-
-**OpenAIシリーズモデル:**
-- `o3-mini-high` - 高思考努力
-- `o3-mini-medium` - 中思考努力
-- `o3-mini-low` - 低思考努力
-- `gpt-5-high` - 高思考努力
-- `gpt-5-medium` - 中思考努力
-- `gpt-5-low` - 低思考努力
-
-**Claude思考モデル:**
-- `claude-3-7-sonnet-20250219-thinking` - 思考モードを有効にする
-
-**Google Geminiシリーズモデル:**
-- `gemini-2.5-flash-thinking` - 思考モードを有効にする
-- `gemini-2.5-flash-nothinking` - 思考モードを無効にする
-- `gemini-2.5-pro-thinking` - 思考モードを有効にする
-- `gemini-2.5-pro-thinking-128` - 思考モードを有効にし、思考予算を128トークンに設定する
-- Gemini モデル名の末尾に `-low` / `-medium` / `-high` を付けることで推論強度を直接指定できます（追加の思考予算サフィックスは不要です）。
-
-</details>
+1. **注入 (Injection)：** ユーザーが USDT をチャージしてクレジットを取得。
+2. **マイニング (Mining)：** ユーザーがクレジットを消費して API を呼び出し、システムが「コンピュート難度アルゴリズム」に基づいて自動的に L-Coin を鋳造してユーザーに配布。
+3. **流通 (Trading)：** ユーザーが内部取引所で L-Coin を売買。
+4. **リバイバル (Buyback)：** プラットフォームが定期的に API ビジネス利益を使用して L-Coin をリバイバル。
+5. **バーン (Burn)：** リバイバルされた L-Coin はブラックホールアドレスに入り、デフレを実現。
 
 ---
 
-## 🤖 モデルサポート
+## 3. コアメカニズムの詳細 (Core Mechanics)
 
-> 詳細については[APIドキュメント - 中継インターフェース](https://docs.newapi.pro/ja/docs/api)
+### 3.1 取引即マイニング (Consume-to-Earn)
 
-| モデルタイプ | 説明 | ドキュメント |
-|---------|------|------|
-| 🤖 OpenAI-Compatible | OpenAI互換モデル | [ドキュメント](https://docs.newapi.pro/ja/docs/api/ai-model/chat/openai/createchatcompletion) |
-| 🤖 OpenAI Responses | OpenAI Responsesフォーマット | [ドキュメント](https://docs.newapi.pro/ja/docs/api/ai-model/chat/openai/createresponse) |
-| 🎨 Midjourney-Proxy | [Midjourney-Proxy(Plus)](https://github.com/novicezk/midjourney-proxy) | [ドキュメント](https://doc.newapi.pro/api/midjourney-proxy-image) |
-| 🎵 Suno-API | [Suno API](https://github.com/Suno-API/Suno-API) | [ドキュメント](https://doc.newapi.pro/api/suno-music) |
-| 🔄 Rerank | Cohere、Jina | [ドキュメント](https://docs.newapi.pro/ja/docs/api/ai-model/rerank/creatererank) |
-| 💬 Claude | Messagesフォーマット | [ドキュメント](https://docs.newapi.pro/ja/docs/api/ai-model/chat/createmessage) |
-| 🌐 Gemini | Google Geminiフォーマット | [ドキュメント](https://docs.newapi.pro/ja/docs/api/ai-model/chat/gemini/geminirelayv1beta) |
-| 🔧 Dify | ChatFlowモード | - |
-| 🎯 カスタム | 完全な呼び出しアドレスの入力をサポート | - |
+これは L-Coin の唯一のプライマリマーケット発行方法です。私たちはプライベートセールを実施せず、すべてのトークンはコンピュート消費から生成されます。
 
-### 📡 サポートされているインターフェース
+* **コンピュート証明 (PoC)：** ユーザーの API 呼び出しログは作業量証明として機能します。
+* **半減メカニズム (Halving)：** 希少性を確保するため、L-Coin の出力は「動的難度調整」を実装しています。
+* *創世期：* $1 クレジット消費ごとに 10 L-Coin を出力。
+* *成長期：* 100 万枚出力ごとに出力率が半減。
+* *成熟期：* 出力は極めて希少で、二次市場での購入を強制。
 
-<details>
-<summary>完全なインターフェースリストを表示</summary>
+### 3.2 利益リバイバルプロトコル (Buyback Protocol)
 
-- [チャットインターフェース (Chat Completions)](https://docs.newapi.pro/ja/docs/api/ai-model/chat/openai/createchatcompletion)
-- [レスポンスインターフェース (Responses)](https://docs.newapi.pro/ja/docs/api/ai-model/chat/openai/createresponse)
-- [イメージインターフェース (Image)](https://docs.newapi.pro/ja/docs/api/ai-model/images/openai/post-v1-images-generations)
-- [オーディオインターフェース (Audio)](https://docs.newapi.pro/ja/docs/api/ai-model/audio/openai/create-transcription)
-- [ビデオインターフェース (Video)](https://docs.newapi.pro/ja/docs/api/ai-model/audio/openai/createspeech)
-- [エンベッドインターフェース (Embeddings)](https://docs.newapi.pro/ja/docs/api/ai-model/embeddings/createembedding)
-- [再ランク付けインターフェース (Rerank)](https://docs.newapi.pro/ja/docs/api/ai-model/rerank/creatererank)
-- [リアルタイム対話インターフェース (Realtime)](https://docs.newapi.pro/ja/docs/api/ai-model/realtime/createrealtimesession)
-- [Claudeチャット](https://docs.newapi.pro/ja/docs/api/ai-model/chat/createmessage)
-- [Google Geminiチャット](https://docs.newapi.pro/ja/docs/api/ai-model/chat/gemini/geminirelayv1beta)
+L-Exchange は、プラットフォームのコア事業（API リセール）の純利益の **20%** を「エコシステムファンド」に注入することを約束しています。
 
-</details>
+* **実行頻度：** 毎週金曜日。
+* **実行方法：** 内部取引所で**市場価格 (Market Order)** でスイープ。これはリバイバル行動が K ラインチャートを直接上昇させ、すべてのトークンホルダーが恩恵を受けることを意味します。
+* **透明性：** 各リバイバル後のバーンハッシュ（またはデータベースレコード）はコミュニティに公開されます。
+
+### 3.3 レバレッジ取引 (Leverage Trading)
+
+市場の深さとゲーム性を増加させるため、L-Exchange はクレジットを証拠金とするレバレッジ取引を提供しています。
+
+* **ロング/ショート：** ユーザーはクレジットを借りて L-Coin を購入（ロング）するか、L-Coin を借りて売却（ショート）できます。
+* **倍率：** 最大 5 倍レバレッジをサポート。
+* **ロスカット清算：** 証拠金率が 10% 未満に低下した場合、強制決済がトリガーされます。ロスカットから生じるペナルティは「リスク準備金」に注入され、極端な市場状況下での穿孔補償に使用されます。
 
 ---
 
-## 🚢 デプロイ
+## 4. エコシステムアプリケーション (Ecosystem Products)
 
-> [!TIP]
-> **最新のDockerイメージ:** `calciumion/new-api:latest`
+L-Coin を保有することの利点は何ですか？価値上昇を待つ以外に、3 つのコア消費シナリオを設計しました。
 
-### 📋 デプロイ要件
+### 4.1 IMO ローンチパッド (新モデル首発ステーション)
 
-| コンポーネント | 要件 |
-|------|------|
-| **ローカルデータベース** | SQLite（Dockerは `/data` ディレクトリをマウントする必要があります）|
-| **リモートデータベース** | MySQL ≥ 5.7.8 または PostgreSQL ≥ 9.6 |
-| **コンテナエンジン** | Docker / Docker Compose |
+これは L-Exchange の最も強力な機能です。OpenAI が **GPT-5**、**Sora**、**Voice Engine** などの希少で高コストなモデルをリリースする場合、通常のチャネルはしばしば最初にアクセスできません。
 
-### ⚙️ 環境変数設定
+* **ルール：** プラットフォームが取得した希少モデルクォータ（API Quota）は、**通常ユーザーには開放されません**。
+* **購読：** L-Coin を保有するユーザーのみが購読に参加できます。
+* **加重配分：** `ユーザーが取得する使用クォータ = (ユーザーがロックしている L-Coin / ネットワーク全体の総ロック量) * モデル総クォータ`。
+* **ロジック：** 最先端の AI を使用したいですか？あなたは L-Exchange の株主である必要があります。
 
-<details>
-<summary>一般的な環境変数設定</summary>
+### 4.2 AI 予測市場 (Prediction Markets)
 
-| 変数名 | 説明 | デフォルト値 |
-|--------|------|--------|
-| `SESSION_SECRET` | セッションシークレット（マルチマシンデプロイに必須） | - |
-| `CRYPTO_SECRET` | 暗号化シークレット（Redisに必須） | - |
-| `SQL_DSN** | データベース接続文字列 | - |
-| `REDIS_CONN_STRING` | Redis接続文字列 | - |
-| `STREAMING_TIMEOUT` | ストリーミング応答のタイムアウト時間（秒） | `300` |
-| `STREAM_SCANNER_MAX_BUFFER_MB` | ストリームスキャナの1行あたりバッファ上限（MB）。4K画像など巨大なbase64 `data:` ペイロードを扱う場合は値を増加させてください | `64` |
-| `MAX_REQUEST_BODY_MB` | リクエストボディ最大サイズ（MB、**解凍後**に計測。巨大リクエスト/zip bomb によるメモリ枯渇を防止）。超過時は `413` | `32` |
-| `AZURE_DEFAULT_API_VERSION` | Azure APIバージョン | `2025-04-01-preview` |
-| `ERROR_LOG_ENABLED` | エラーログスイッチ | `false` |
-| `PYROSCOPE_URL` | Pyroscopeサーバーのアドレス | - |
-| `PYROSCOPE_APP_NAME` | Pyroscopeアプリ名 | `new-api` |
-| `PYROSCOPE_BASIC_AUTH_USER` | Pyroscope Basic Authユーザー | - |
-| `PYROSCOPE_BASIC_AUTH_PASSWORD` | Pyroscope Basic Authパスワード | - |
-| `PYROSCOPE_MUTEX_RATE` | Pyroscope mutexサンプリング率 | `5` |
-| `PYROSCOPE_BLOCK_RATE` | Pyroscope blockサンプリング率 | `5` |
-| `HOSTNAME` | Pyroscope用のホスト名タグ | `new-api` |
+L-Coin ベースの分散型対賭プロトコル。コミュニティの集合知を活用して AI 業界の未来を予測します。
 
-📖 **完全な設定:** [環境変数ドキュメント](https://docs.newapi.pro/ja/docs/installation/config-maintenance/environment-variables)
+* **提案メカニズム：** コミュニティは提案を開始できます。例えば、*「OpenAI は 2026 年 Q1 に GPT-5 をリリースしますか？」*。
+* **ベッティング：** ユーザーは L-Coin を使用して `YES` または `NO` のシェアを購入。
+* **動的オッズ：** 自動マーケットメーカー (AMM) と同様に、ベッティングが少ない側ほど潜在的なリターンが高くなります。
+* **決済：** 結果が公開された後、勝者は敗者の L-Coin プール（プラットフォームが 5% の手数料を徴収してバーン）を分け合います。
 
-</details>
+### 4.3 コンピュート戦争 (Compute Wars)
 
-### 🔧 デプロイ方法
+これは大口ユーザーと開発者のための「軍拡競争」です。
 
-<details>
-<summary><strong>方法 1: Docker Compose（推奨）</strong></summary>
+* **サイクル：** 毎週 1 ラウンド。
+* **ランキング：** 今週の API 消費額（クレジット）が最も高い上位 100 ユーザーをリアルタイムで表示。
+* **報酬プール：**
+* **L-Coin 報酬：** プラットフォームはエコシステムファンドから大量の L-Coin を取り出して上位 10 名に配布。
+* **権益報酬：** チャンピオンは翌週の API 呼び出しの **無料権** または **無制限並行権** を取得。
 
-```bash
-# プロジェクトをクローン
-git clone https://github.com/QuantumNous/new-api.git
-cd new-api
-
-# 設定を編集
-nano docker-compose.yml
-
-# サービスを起動
-docker-compose up -d
-```
-
-</details>
-
-<details>
-<summary><strong>方法 2: Dockerコマンド</strong></summary>
-
-**SQLiteを使用:**
-```bash
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-```
-
-**MySQLを使用:**
-```bash
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-```
-
-> **💡 パス説明:** 
-> - `./data:/data` - 相対パス、データは現在のディレクトリのdataフォルダに保存されます
-> - 絶対パスを使用することもできます：`/your/custom/path:/data`
-
-</details>
-
-<details>
-<summary><strong>方法 3: 宝塔パネル</strong></summary>
-
-1. 宝塔パネル（**9.2.0バージョン**以上）をインストールし、アプリケーションストアで**New-API**を検索してインストールします。
-
-📖 [画像付きチュートリアル](./docs/BT.md)
-
-</details>
-
-### ⚠️ マルチマシンデプロイの注意事項
-
-> [!WARNING]
-> - **必ず設定する必要があります** `SESSION_SECRET` - そうしないとマルチマシンデプロイ時にログイン状態が不一致になります
-> - **共有Redisは必ず設定する必要があります** `CRYPTO_SECRET` - そうしないとデータを復号化できません
-
-### 🔄 チャネルリトライとキャッシュ
-
-**リトライ設定:** `設定 → 運営設定 → 一般設定 → 失敗リトライ回数`
-
-**キャッシュ設定:**
-- `REDIS_CONN_STRING`：Redisキャッシュ（推奨）
-- `MEMORY_CACHE_ENABLED`：メモリキャッシュ
+* **ゲーム：** チャンピオン報酬を争うため、大口ユーザーは API を狂ったように消費し（無効なボリュームパディングさえ行い）、これはプラットフォーム収入を直接増加させ、その結果リバイバル力を増加させ、すべてのトークンホルダーに利益をもたらします。
 
 ---
 
-## 🔗 関連プロジェクト
+## 5. ガバナンスとティア (Governance & Tiers)
 
-### 上流プロジェクト
+L-Exchange は「ステーキングティアシステム」を採用して流動性をロックし、市場の売却圧力を減らします。ユーザーは L-Coin をステーキングコントラクトに預けることができます。
 
-| プロジェクト | 説明 |
-|------|------|
-| [One API](https://github.com/songquanpeng/one-api) | オリジナルプロジェクトベース |
-| [Midjourney-Proxy](https://github.com/novicezk/midjourney-proxy) | Midjourneyインターフェースサポート |
-
-### 補助ツール
-
-| プロジェクト | 説明 |
-|------|------|
-| [neko-api-key-tool](https://github.com/Calcium-Ion/neko-api-key-tool) | キー使用量クォータ照会ツール |
-| [new-api-horizon](https://github.com/Calcium-Ion/new-api-horizon) | New API高性能最適化版 |
+| ティア | ステーキング要件 (L-Coin) | API 手数料割引 | プレミアム権益 |
+| --- | --- | --- | --- |
+| **Lv 1** | 0 | 100% (定価) | なし |
+| **Lv 2** | 1,000 | 95% 割引 | 高並行チャネルのロック解除 |
+| **Lv 3** | 10,000 | 85% 割引 | IMO 参加権 (1 倍ウェイト) |
+| **Lv 4** | 50,000 | 70% 割引 | IMO 参加権 (3 倍ウェイト) + 予測市場手数料無料 |
+| **Whale** | 100,000 | コスト価格決済 | プラットフォーム重大決定投票権を保有 |
 
 ---
 
-## 💬 ヘルプサポート
+## 6. リスク開示 (Risk Disclosure)
 
-### 📖 ドキュメントリソース
+L-Exchange は実験的なフィンテック製品です。参加する前に、以下のリスクを必ず理解してください：
 
-| リソース | リンク |
-|------|------|
-| 📘 よくある質問 | [FAQ](https://docs.newapi.pro/ja/docs/support/faq) |
-| 💬 コミュニティ交流 | [交流チャネル](https://docs.newapi.pro/ja/docs/support/community-interaction) |
-| 🐛 問題のフィードバック | [問題フィードバック](https://docs.newapi.pro/ja/docs/support/feedback-issues) |
-| 📚 完全なドキュメント | [公式ドキュメント](https://docs.newapi.pro/ja/docs) |
-
-### 🤝 貢献ガイド
-
-あらゆる形の貢献を歓迎します！
-
-- 🐛 バグを報告する
-- 💡 新しい機能を提案する
-- 📝 ドキュメントを改善する
-- 🔧 コードを提出する
+1. **資産変動リスク：** L-Coin の価格は完全に市場の需給によって決定され、プラットフォームは元本保証を約束せず、価格は短時間で急激に変動したり、ゼロになる可能性があります。
+2. **技術リスク：** 成熟した NewAPI アーキテクチャに基づいていますが、金融ロジックレイヤーに未知のバグが存在する可能性があります。
+3. **中央集権化リスク：** 現在の段階では、L-Exchange は中央集権化データベース（Layer 2）上で動作しています。データの透明性を約束していますが、これはプラットフォーム運営者の信用に依存しています。
+4. **規制リスク：** 本プラットフォームは技術交流と模擬経済実験のみに限定され、本プラットフォームを使用した違法な資金調達、マネーロンダリング、または法定通貨交換業務は厳禁です。
 
 ---
 
-## 📜 ライセンス
+## 7. 結論 (Conclusion)
 
-このプロジェクトは [GNU Affero General Public License v3.0 (AGPLv3)](./LICENSE) の下でライセンスされています。
+L-Exchange は単なる API ストアではなく、**AI 時代のナスダック**です。
 
-お客様の組織のポリシーがAGPLv3ライセンスのソフトウェアの使用を許可していない場合、またはAGPLv3のオープンソース義務を回避したい場合は、こちらまでお問い合わせください：[support@quantumnous.com](mailto:support@quantumnous.com)
+このエコシステムでは、すべての `ChatCompletion` リクエストはマイニング、すべてのモデル反復は IPO、すべての見解の相違は対賭取引です。
 
----
+私たちに参加してください。AI の消費者であるだけではいけません。AI コンピュートの**ディーラー**になってください。
 
-## 🌟 スター履歴
-
-<div align="center">
-
-[![スター履歴チャート](https://api.star-history.com/svg?repos=Calcium-Ion/new-api&type=Date)](https://star-history.com/#Calcium-Ion/new-api&Date)
-
-</div>
-
----
-
-<div align="center">
-
-### 💖 New APIをご利用いただきありがとうございます
-
-このプロジェクトがあなたのお役に立てたなら、ぜひ ⭐️ スターをください！
-
-**[公式ドキュメント](https://docs.newapi.pro/ja/docs)** • **[問題フィードバック](https://github.com/Calcium-Ion/new-api/issues)** • **[最新リリース](https://github.com/Calcium-Ion/new-api/releases)**
-
-<sub>❤️ で構築された QuantumNous</sub>
-
-</div>
+**L-Exchange Team**
+*In Code We Trust.*

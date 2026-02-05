@@ -1,476 +1,168 @@
-<div align="center">
+---
 
-![new-api](/web/public/logo.png)
+# L-Exchange Livre Blanc : Protocole de Liquidité de Calcul Décentralisé
 
-# New API
+**L-Exchange Whitepaper: The Decentralized Compute Liquidity Protocol**
 
-🍥 **Passerelle de modèles étendus de nouvelle génération et système de gestion d'actifs d'IA**
-
-<p align="center">
-  <a href="./README.zh.md">中文</a> | 
-  <a href="./README.md">English</a> | 
-  <strong>Français</strong> | 
-  <a href="./README.ja.md">日本語</a>
-</p>
-
-<p align="center">
-  <a href="https://raw.githubusercontent.com/Calcium-Ion/new-api/main/LICENSE">
-    <img src="https://img.shields.io/github/license/Calcium-Ion/new-api?color=brightgreen" alt="licence">
-  </a>
-  <a href="https://github.com/Calcium-Ion/new-api/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Calcium-Ion/new-api?color=brightgreen&include_prereleases" alt="version">
-  </a>
-  <a href="https://github.com/users/Calcium-Ion/packages/container/package/new-api">
-    <img src="https://img.shields.io/badge/docker-ghcr.io-blue" alt="docker">
-  </a>
-  <a href="https://hub.docker.com/r/CalciumIon/new-api">
-    <img src="https://img.shields.io/badge/docker-dockerHub-blue" alt="docker">
-  </a>
-  <a href="https://goreportcard.com/report/github.com/Calcium-Ion/new-api">
-    <img src="https://goreportcard.com/badge/github.com/Calcium-Ion/new-api" alt="GoReportCard">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://trendshift.io/repositories/8227" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/8227" alt="Calcium-Ion%2Fnew-api | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
-  </a>
-  <br>
-  <a href="https://hellogithub.com/repository/QuantumNous/new-api" target="_blank">
-    <img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=539ac4217e69431684ad4a0bab768811&claim_uid=tbFPfKIDHpc4TzR" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" />
-  </a>
-  <a href="https://www.producthunt.com/products/new-api/launches/new-api?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-new-api" target="_blank" rel="noopener noreferrer">
-    <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1047693&theme=light&t=1769577875005" alt="New API - All-in-one AI asset management gateway. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="#-démarrage-rapide">Démarrage rapide</a> •
-  <a href="#-fonctionnalités-clés">Fonctionnalités clés</a> •
-  <a href="#-déploiement">Déploiement</a> •
-  <a href="#-documentation">Documentation</a> •
-  <a href="#-aide-support">Aide</a>
-</p>
-
-</div>
-
-## 📝 Description du projet
-
-> [!NOTE]  
-> Il s'agit d'un projet open-source développé sur la base de [One API](https://github.com/songquanpeng/one-api)
-
-> [!IMPORTANT]  
-> - Ce projet est uniquement destiné à des fins d'apprentissage personnel, sans garantie de stabilité ni de support technique.
-> - Les utilisateurs doivent se conformer aux [Conditions d'utilisation](https://openai.com/policies/terms-of-use) d'OpenAI et aux **lois et réglementations applicables**, et ne doivent pas l'utiliser à des fins illégales.
-> - Conformément aux [《Mesures provisoires pour la gestion des services d'intelligence artificielle générative》](http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm), veuillez ne fournir aucun service d'IA générative non enregistré au public en Chine.
+**Version :** 1.0 (Genesis)
+**Statut :** En bêta (Beta)
 
 ---
 
-## 🤝 Partenaires de confiance
+## Résumé (Abstract)
 
-<p align="center">
-  <em>Sans ordre particulier</em>
-</p>
+L-Exchange est la première plateforme mondiale de distribution de puissance de calcul IA intégrant un **modèle de jeu financier**. Nous nous engageons à résoudre les problèmes fondamentaux des services traditionnels de relais API : la « rigidité des prix », la « fragmentation des intérêts des utilisateurs » et l'« allocation inefficace des ressources ».
 
-<p align="center">
-  <a href="https://www.cherry-ai.com/" target="_blank">
-    <img src="./docs/images/cherry-studio.png" alt="Cherry Studio" height="80" />
-  </a>
-  <a href="https://bda.pku.edu.cn/" target="_blank">
-    <img src="./docs/images/pku.png" alt="Université de Pékin" height="80" />
-  </a>
-  <a href="https://www.compshare.cn/?ytag=GPU_yy_gh_newapi" target="_blank">
-    <img src="./docs/images/ucloud.png" alt="UCloud" height="80" />
-  </a>
-  <a href="https://www.aliyun.com/" target="_blank">
-    <img src="./docs/images/aliyun.png" alt="Alibaba Cloud" height="80" />
-  </a>
-  <a href="https://io.net/" target="_blank">
-    <img src="./docs/images/io-net.png" alt="IO.NET" height="80" />
-  </a>
-</p>
+En introduisant un **modèle économique à double jeton (Dual-Token Economics)**, L-Exchange restructure le modèle traditionnel de « paiement à l'utilisation » en un modèle **« Consommer pour Gagner (Consume-to-Earn) »**. Ici, la puissance de calcul (Compute) n'est plus simplement un bien de consommation, mais un actif financier mesurable, négociable et appréciatif. Chaque développeur n'est plus seulement un consommateur, mais un **fournisseur de liquidité** et un **actionnaire** de la plateforme.
 
 ---
 
-## 🙏 Remerciements spéciaux
+## 1. Vision et Contexte (Vision & Background)
 
-<p align="center">
-  <a href="https://www.jetbrains.com/?from=new-api" target="_blank">
-    <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" alt="JetBrains Logo" width="120" />
-  </a>
-</p>
+### 1.1 Défis de l'Industrie
 
-<p align="center">
-  <strong>Merci à <a href="https://www.jetbrains.com/?from=new-api">JetBrains</a> pour avoir fourni une licence de développement open-source gratuite pour ce projet</strong>
-</p>
+Le marché actuel du relais d'API LLM fait face à trois problèmes fondamentaux :
 
----
+1. **Jeu à somme nulle :** Les utilisateurs et les relayeurs entretiennent une relation purement commerciale. Les utilisateurs veulent des prix plus bas, les vendeurs veulent des marges plus élevées, les intérêts sont opposés.
+2. **Perte de Valeur :** Les premiers utilisateurs ont contribué d'énormes quantités de données de test et de réputation à la plateforme, mais une fois que la plateforme s'agrandit, ils ne peuvent pas partager les bénéfices de la croissance.
+3. **Allocation Inefficace de la Rareté :** Lorsque des modèles rares et coûteux comme GPT-5, Sora ou Voice Engine sont lancés, les plateformes traditionnelles les distribuent généralement par augmentation de prix ou file d'attente aléatoire, sans mécanisme d'ajustement du marché juste et efficace.
 
-## 🚀 Démarrage rapide
+### 1.2 Notre Solution
 
-### Utilisation de Docker Compose (recommandé)
+L-Exchange établit un **micro-marché financier basé sur la puissance de calcul**. Nous tokenisons les « profits » et les « droits de gouvernance » de la plateforme et restituons le pouvoir de fixation des prix au marché.
 
-```bash
-# Cloner le projet
-git clone https://github.com/QuantumNous/new-api.git
-cd new-api
-
-# Modifier la configuration docker-compose.yml
-nano docker-compose.yml
-
-# Démarrer le service
-docker-compose up -d
-```
-
-<details>
-<summary><strong>Utilisation des commandes Docker</strong></summary>
-
-```bash
-# Tirer la dernière image
-docker pull calciumion/new-api:latest
-
-# Utilisation de SQLite (par défaut)
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-
-# Utilisation de MySQL
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-```
-
-> **💡 Astuce:** `-v ./data:/data` sauvegardera les données dans le dossier `data` du répertoire actuel, vous pouvez également le changer en chemin absolu comme `-v /your/custom/path:/data`
-
-</details>
+* **Pour les développeurs :** L'utilisation de l'API génère des jetons de plateforme, réduisant considérablement le coût réel d'utilisation.
+* **Pour les spéculateurs :** Générer des profits par des moyens financiers en fournissant de la liquidité et en participant aux marchés de prédiction.
+* **Pour l'écosystème :** Grâce à un modèle déflationniste, convertir les revenus externes en valeur de jeton pour une croissance durable.
 
 ---
 
-🎉 Après le déploiement, visitez `http://localhost:3000` pour commencer à utiliser!
+## 2. Modèle Économique (The Economic Model)
 
-📖 Pour plus de méthodes de déploiement, veuillez vous référer à [Guide de déploiement](https://docs.newapi.pro/en/docs/installation)
+L-Exchange adopte un mécanisme d'isolation à double voie **« stablecoin + jeton de gouvernance »**, garantissant que la stabilité du service de calcul coexiste avec les propriétés spéculatives des actifs.
 
----
+### 2.1 L-Credits (Crédits/Carburant)
 
-## 📚 Documentation
+* **Définition :** Unité de tarification universelle et carburant de règlement de la plateforme.
+* **Ancrage :** 1 Credit = 1,00 USD (USDT).
+* **Utilisation :** Utilisé uniquement pour payer les frais d'appel API (par exemple, consommation de jetons GPT-4o).
+* **Acquisition :** Recharger en monnaie fiduciaire ou vendre L-Coin sur le marché secondaire.
+* **Stabilité :** Remboursement rigide, sans fluctuation de prix.
 
-<div align="center">
+### 2.2 L-Coin (LCO / Jeton de Puissance de Calcul)
 
-### 📖 [Documentation officielle](https://docs.newapi.pro/en/docs) | [![Demander à DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/QuantumNous/new-api)
+* **Définition :** Actif principal porteur de valeur de plateforme, droits de gouvernance et propriétés spéculatives.
+* **Approvisionnement :** Approvisionnement total constant de 10 millions de jetons, jamais augmenté.
+* **Capture de Valeur :** La valeur de L-Coin est directement liée aux bénéfices de l'activité API de la plateforme (voir le mécanisme de rachat et de destruction).
 
-</div>
+### 2.3 Système de Circulation en Boucle (The Loop)
 
-**Navigation rapide:**
-
-| Catégorie | Lien |
-|------|------|
-| 🚀 Guide de déploiement | [Documentation d'installation](https://docs.newapi.pro/en/docs/installation) |
-| ⚙️ Configuration de l'environnement | [Variables d'environnement](https://docs.newapi.pro/en/docs/installation/config-maintenance/environment-variables) |
-| 📡 Documentation de l'API | [Documentation de l'API](https://docs.newapi.pro/en/docs/api) |
-| ❓ FAQ | [FAQ](https://docs.newapi.pro/en/docs/support/faq) |
-| 💬 Interaction avec la communauté | [Canaux de communication](https://docs.newapi.pro/en/docs/support/community-interaction) |
-
----
-
-## ✨ Fonctionnalités clés
-
-> Pour les fonctionnalités détaillées, veuillez vous référer à [Présentation des fonctionnalités](https://docs.newapi.pro/en/docs/guide/wiki/basic-concepts/features-introduction) |
-
-### 🎨 Fonctions principales
-
-| Fonctionnalité | Description |
-|------|------|
-| 🎨 Nouvelle interface utilisateur | Conception d'interface utilisateur moderne |
-| 🌍 Multilingue | Prend en charge le chinois, l'anglais, le français, le japonais |
-| 🔄 Compatibilité des données | Complètement compatible avec la base de données originale de One API |
-| 📈 Tableau de bord des données | Console visuelle et analyse statistique |
-| 🔒 Gestion des permissions | Regroupement de jetons, restrictions de modèles, gestion des utilisateurs |
-
-### 💰 Paiement et facturation
-
-- ✅ Recharge en ligne (EPay, Stripe)
-- ✅ Tarification des modèles de paiement à l'utilisation
-- ✅ Prise en charge de la facturation du cache (OpenAI, Azure, DeepSeek, Claude, Qwen et tous les modèles pris en charge)
-- ✅ Configuration flexible des politiques de facturation
-
-### 🔐 Autorisation et sécurité
-
-- 😈 Connexion par autorisation Discord
-- 🤖 Connexion par autorisation LinuxDO
-- 📱 Connexion par autorisation Telegram
-- 🔑 Authentification unifiée OIDC
-- 🔍 Requête de quota d'utilisation de clé (avec [neko-api-key-tool](https://github.com/Calcium-Ion/neko-api-key-tool))
-
-### 🚀 Fonctionnalités avancées
-
-**Prise en charge des formats d'API:**
-- ⚡ [OpenAI Responses](https://docs.newapi.pro/en/docs/api/ai-model/chat/openai/create-response)
-- ⚡ [OpenAI Realtime API](https://docs.newapi.pro/en/docs/api/ai-model/realtime/create-realtime-session) (y compris Azure)
-- ⚡ [Claude Messages](https://docs.newapi.pro/en/docs/api/ai-model/chat/create-message)
-- ⚡ [Google Gemini](https://doc.newapi.pro/en/api/google-gemini-chat)
-- 🔄 [Modèles Rerank](https://docs.newapi.pro/en/docs/api/ai-model/rerank/create-rerank) (Cohere, Jina)
-
-**Routage intelligent:**
-- ⚖️ Sélection aléatoire pondérée des canaux
-- 🔄 Nouvelle tentative automatique en cas d'échec
-- 🚦 Limitation du débit du modèle pour les utilisateurs
-
-**Conversion de format:**
-- 🔄 **OpenAI Compatible ⇄ Claude Messages**
-- 🔄 **OpenAI Compatible → Google Gemini**
-- 🔄 **Google Gemini → OpenAI Compatible** - Texte uniquement, les appels de fonction ne sont pas encore pris en charge
-- 🚧 **OpenAI Compatible ⇄ OpenAI Responses** - En développement
-- 🔄 **Fonctionnalité de la pensée au contenu**
-
-**Prise en charge de l'effort de raisonnement:**
-
-<details>
-<summary>Voir la configuration détaillée</summary>
-
-**Modèles de la série OpenAI :**
-- `o3-mini-high` - Effort de raisonnement élevé
-- `o3-mini-medium` - Effort de raisonnement moyen
-- `o3-mini-low` - Effort de raisonnement faible
-- `gpt-5-high` - Effort de raisonnement élevé
-- `gpt-5-medium` - Effort de raisonnement moyen
-- `gpt-5-low` - Effort de raisonnement faible
-
-**Modèles de pensée de Claude:**
-- `claude-3-7-sonnet-20250219-thinking` - Activer le mode de pensée
-
-**Modèles de la série Google Gemini:**
-- `gemini-2.5-flash-thinking` - Activer le mode de pensée
-- `gemini-2.5-flash-nothinking` - Désactiver le mode de pensée
-- `gemini-2.5-pro-thinking` - Activer le mode de pensée
-- `gemini-2.5-pro-thinking-128` - Activer le mode de pensée avec budget de pensée de 128 tokens
-- Vous pouvez également ajouter les suffixes `-low`, `-medium` ou `-high` aux modèles Gemini pour fixer le niveau d’effort de raisonnement (sans suffixe de budget supplémentaire).
-
-</details>
+1. **Injection :** Les utilisateurs rechargent USDT pour obtenir des Credits.
+2. **Minage :** Les utilisateurs consomment des Credits pour appeler l'API, le système émet automatiquement L-Coin selon l'« algorithme de difficulté de calcul » et les distribue aux utilisateurs.
+3. **Trading :** Les utilisateurs achètent et vendent L-Coin sur l'échange interne.
+4. **Rachat :** La plateforme rachète régulièrement L-Coin en utilisant les bénéfices de l'activité API.
+5. **Destruction :** Les L-Coin rachetés entrent dans une adresse de trou noir, réalisant la déflation.
 
 ---
 
-## 🤖 Prise en charge des modèles
+## 3. Détail des Mécanismes Principaux (Core Mechanics)
 
-> Pour les détails, veuillez vous référer à [Documentation de l'API - Interface de relais](https://docs.newapi.pro/en/docs/api)
+### 3.1 Trading est Minage (Consume-to-Earn)
 
-| Type de modèle | Description | Documentation |
-|---------|------|------|
-| 🤖 OpenAI-Compatible | Modèles compatibles OpenAI | [Documentation](https://docs.newapi.pro/en/docs/api/ai-model/chat/openai/createchatcompletion) |
-| 🤖 OpenAI Responses | Format OpenAI Responses | [Documentation](https://docs.newapi.pro/en/docs/api/ai-model/chat/openai/createresponse) |
-| 🎨 Midjourney-Proxy | [Midjourney-Proxy(Plus)](https://github.com/novicezk/midjourney-proxy) | [Documentation](https://doc.newapi.pro/api/midjourney-proxy-image) |
-| 🎵 Suno-API | [Suno API](https://github.com/Suno-API/Suno-API) | [Documentation](https://doc.newapi.pro/api/suno-music) |
-| 🔄 Rerank | Cohere, Jina | [Documentation](https://docs.newapi.pro/en/docs/api/ai-model/rerank/creatererank) |
-| 💬 Claude | Format Messages | [Documentation](https://docs.newapi.pro/en/docs/api/ai-model/chat/createmessage) |
-| 🌐 Gemini | Format Google Gemini | [Documentation](https://docs.newapi.pro/en/docs/api/ai-model/chat/gemini/geminirelayv1beta) |
-| 🔧 Dify | Mode ChatFlow | - |
-| 🎯 Personnalisé | Prise en charge de l'adresse d'appel complète | - |
+C'est la seule méthode d'émission du marché primaire pour L-Coin. Nous ne menons pas de levée de fonds privée, tous les jetons sont générés par la consommation de calcul.
 
-### 📡 Interfaces prises en charge
+* **Preuve de Calcul (PoC) :** Les journaux d'appel API des utilisateurs servent de preuve de travail.
+* **Mécanisme de Réduction de Moitié (Halving) :** Pour assurer la rareté, la production de L-Coin suit un « ajustement de difficulté dynamique ».
+* *Période de Genèse :* Pour chaque $1 de Credits consommés, 10 L-Coin sont produits.
+* *Période de Croissance :* Pour chaque 1 million de jetons produits, le taux de production est réduit de moitié.
+* *Période de Maturité :* La production devient extrêmement rare, forçant l'achat sur le marché secondaire.
 
-<details>
-<summary>Voir la liste complète des interfaces</summary>
+### 3.2 Protocole de Rachat de Bénéfices (Buyback Protocol)
 
-- [Interface de discussion (Chat Completions)](https://docs.newapi.pro/en/docs/api/ai-model/chat/openai/createchatcompletion)
-- [Interface de réponse (Responses)](https://docs.newapi.pro/en/docs/api/ai-model/chat/openai/createresponse)
-- [Interface d'image (Image)](https://docs.newapi.pro/en/docs/api/ai-model/images/openai/post-v1-images-generations)
-- [Interface audio (Audio)](https://docs.newapi.pro/en/docs/api/ai-model/audio/openai/create-transcription)
-- [Interface vidéo (Video)](https://docs.newapi.pro/en/docs/api/ai-model/audio/openai/createspeech)
-- [Interface d'incorporation (Embeddings)](https://docs.newapi.pro/en/docs/api/ai-model/embeddings/createembedding)
-- [Interface de rerank (Rerank)](https://docs.newapi.pro/en/docs/api/ai-model/rerank/creatererank)
-- [Conversation en temps réel (Realtime)](https://docs.newapi.pro/en/docs/api/ai-model/realtime/createrealtimesession)
-- [Discussion Claude](https://docs.newapi.pro/en/docs/api/ai-model/chat/createmessage)
-- [Discussion Google Gemini](https://docs.newapi.pro/en/docs/api/ai-model/chat/gemini/geminirelayv1beta)
+L-Exchange s'engage à injecter **20%** du bénéfice net de l'activité principale de la plateforme (revente d'API) dans le « fonds écosystémique ».
 
-</details>
+* **Fréquence d'Exécution :** Chaque vendredi.
+* **Méthode d'Exécution :** Balayage au **prix du marché (Market Order)** sur l'échange interne. Cela signifie que l'action de rachat augmentera directement le graphique K, bénéficiant à tous les détenteurs de jetons.
+* **Transparence :** Le hachage de destruction (ou l'enregistrement de base de données) après chaque rachat sera publié dans la communauté.
+
+### 3.3 Trading sur Marge (Leverage Trading)
+
+Pour augmenter la profondeur et la nature compétitive du marché, L-Exchange propose un trading de contrats basé sur les Credits comme marge.
+
+* **Long/Court :** Les utilisateurs peuvent emprunter des Credits pour acheter L-Coin (long) ou emprunter L-Coin pour vendre (court).
+* **Ratio :** Support jusqu'à 5x de levier.
+* **Liquidation de Faillite :** Lorsque le ratio de marge tombe en dessous de 10%, une liquidation forcée est déclenchée. Les pénalités de faillite sont injectées dans le « fonds de réserve de risque » pour les remboursements de perte en cas de conditions extrêmes du marché.
 
 ---
 
-## 🚢 Déploiement
+## 4. Scénarios d'Application de l'Écosystème (Ecosystem Products)
 
-> [!TIP]
-> **Dernière image Docker:** `calciumion/new-api:latest`
+À quoi sert de détenir L-Coin ? Au-delà de l'attente d'appréciation, nous avons conçu trois scénarios de consommation principaux.
 
-### 📋 Exigences de déploiement
+### 4.1 Plateforme de Lancement IMO (Station de Lancement de Nouveaux Modèles)
 
-| Composant | Exigence |
-|------|------|
-| **Base de données locale** | SQLite (Docker doit monter le répertoire `/data`)|
-| **Base de données distante | MySQL ≥ 5.7.8 ou PostgreSQL ≥ 9.6 |
-| **Moteur de conteneur** | Docker / Docker Compose |
+C'est la fonctionnalité la plus puissante de L-Exchange. Lorsqu'OpenAI lance des modèles rares et coûteux comme **GPT-5**, **Sora** ou **Voice Engine**, les canaux ordinaires ne peuvent généralement pas y accéder immédiatement.
 
-### ⚙️ Configuration des variables d'environnement
+* **Règles :** Les quotas de modèles rares obtenus par la plateforme (API Quota) **ne sont pas ouverts aux utilisateurs ordinaires**.
+* **Souscription :** Limité aux utilisateurs détenant L-Coin.
+* **Allocation Pondérée :** `Allocation d'utilisation de l'utilisateur = (L-Coin verrouillé par l'utilisateur / Total verrouillé sur le réseau) * Quota total du modèle`.
+* **Logique :** Vous voulez utiliser l'IA la plus avancée ? Vous devez être un actionnaire de L-Exchange.
 
-<details>
-<summary>Configuration courante des variables d'environnement</summary>
+### 4.2 Marchés de Prédiction IA (Prediction Markets)
 
-| Nom de variable | Description | Valeur par défaut |
-|--------|------|--------|
-| `SESSION_SECRET` | Secret de session (requis pour le déploiement multi-machines) |
-| `CRYPTO_SECRET` | Secret de chiffrement (requis pour Redis) | - |
-| `SQL_DSN` | Chaine de connexion à la base de données | - |
-| `REDIS_CONN_STRING` | Chaine de connexion Redis | - |
-| `STREAMING_TIMEOUT` | Délai d'expiration du streaming (secondes) | `300` |
-| `STREAM_SCANNER_MAX_BUFFER_MB` | Taille max du buffer par ligne (Mo) pour le scanner SSE ; à augmenter quand les sorties image/base64 sont très volumineuses (ex. images 4K) | `64` |
-| `MAX_REQUEST_BODY_MB` | Taille maximale du corps de requête (Mo, comptée **après décompression** ; évite les requêtes énormes/zip bombs qui saturent la mémoire). Dépassement ⇒ `413` | `32` |
-| `AZURE_DEFAULT_API_VERSION` | Version de l'API Azure | `2025-04-01-preview` |
-| `ERROR_LOG_ENABLED` | Interrupteur du journal d'erreurs | `false` |
-| `PYROSCOPE_URL` | Adresse du serveur Pyroscope | - |
-| `PYROSCOPE_APP_NAME` | Nom de l'application Pyroscope | `new-api` |
-| `PYROSCOPE_BASIC_AUTH_USER` | Utilisateur Basic Auth Pyroscope | - |
-| `PYROSCOPE_BASIC_AUTH_PASSWORD` | Mot de passe Basic Auth Pyroscope | - |
-| `PYROSCOPE_MUTEX_RATE` | Taux d'échantillonnage mutex Pyroscope | `5` |
-| `PYROSCOPE_BLOCK_RATE` | Taux d'échantillonnage block Pyroscope | `5` |
-| `HOSTNAME` | Nom d'hôte tagué pour Pyroscope | `new-api` |
+Un protocole de pari décentralisé basé sur L-Coin. Exploiter la sagesse collective de la communauté pour prédire l'avenir de l'industrie de l'IA.
 
-📖 **Configuration complète:** [Documentation des variables d'environnement](https://docs.newapi.pro/en/docs/installation/config-maintenance/environment-variables)
+* **Mécanisme de Proposition :** La communauté peut lancer des propositions, par exemple *« OpenAI lancera-t-il GPT-5 au Q1 2026 ? »*.
+* **Pari :** Les utilisateurs utilisent L-Coin pour acheter des parts `OUI` ou `NON`.
+* **Cotes Dynamiques :** Similaire à un teneur de marché automatisé (AMM), le côté avec moins de paris offre des rendements potentiels plus élevés.
+* **Règlement :** Après l'annonce du résultat, les gagnants partagent le pool L-Coin des perdants (la plateforme prélève 5% de frais et les détruit).
 
-</details>
+### 4.3 Guerres de Calcul (Compute Wars)
 
-### 🔧 Méthodes de déploiement
+C'est une « course aux armements » pour les gros joueurs et les développeurs.
 
-<details>
-<summary><strong>Méthode 1: Docker Compose (recommandé)</strong></summary>
+* **Cycle :** Un tour par semaine.
+* **Classement :** Affichage en temps réel des 100 principaux utilisateurs avec la plus grande consommation d'API (Credits) de la semaine.
+* **Pool de Récompenses :**
+* **Récompenses L-Coin :** La plateforme distribue une énorme quantité de L-Coin du fonds écosystémique aux 10 premiers.
+* **Récompenses d'Équité :** Le champion reçoit le **droit de gratuité** ou le **droit de concurrence illimitée** pour les appels API de la semaine suivante.
 
-```bash
-# Cloner le projet
-git clone https://github.com/QuantumNous/new-api.git
-cd new-api
-
-# Modifier la configuration
-nano docker-compose.yml
-
-# Démarrer le service
-docker-compose up -d
-```
-
-</details>
-
-<details>
-<summary><strong>Méthode 2: Commandes Docker</strong></summary>
-
-**Utilisation de SQLite:**
-```bash
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-```
-
-**Utilisation de MySQL:**
-```bash
-docker run --name new-api -d --restart always \
-  -p 3000:3000 \
-  -e SQL_DSN="root:123456@tcp(localhost:3306)/oneapi" \
-  -e TZ=Asia/Shanghai \
-  -v ./data:/data \
-  calciumion/new-api:latest
-```
-
-> **💡 Explication du chemin:** 
-> - `./data:/data` - Chemin relatif, données sauvegardées dans le dossier data du répertoire actuel
-> - Vous pouvez également utiliser un chemin absolu, par exemple : `/your/custom/path:/data`
-
-</details>
-
-<details>
-<summary><strong>Méthode 3: Panneau BaoTa</strong></summary>
-
-1. Installez le panneau BaoTa (version ≥ 9.2.0)
-2. Recherchez **New-API** dans le magasin d'applications
-3. Installation en un clic
-
-📖 [Tutoriel avec des images](./docs/BT.md)
-
-</details>
-
-### ⚠️ Considérations sur le déploiement multi-machines
-
-> [!WARNING]
-> - **Doit définir** `SESSION_SECRET` - Sinon l'état de connexion sera incohérent sur plusieurs machines
-> - **Redis partagé doit définir** `CRYPTO_SECRET` - Sinon les données ne pourront pas être déchiffrées
-
-### 🔄 Nouvelle tentative de canal et cache
-
-**Configuration de la nouvelle tentative:** `Paramètres → Paramètres de fonctionnement → Paramètres généraux → Nombre de tentatives en cas d'échec`
-
-**Configuration du cache:**
-- `REDIS_CONN_STRING`: Cache Redis (recommandé)
-- `MEMORY_CACHE_ENABLED`: Cache mémoire
+* **Jeu :** Pour remporter les récompenses du championnat, les gros joueurs consommeront frénétiquement l'API (même en effectuant un remplissage invalide), ce qui augmente directement les revenus de la plateforme, augmentant ainsi l'intensité du rachat, bénéficiant à tous les détenteurs de jetons.
 
 ---
 
-## 🔗 Projets connexes
+## 5. Gouvernance et Niveaux (Governance & Tiers)
 
-### Projets en amont
+L-Exchange utilise un « système de niveaux de jalonnement » pour verrouiller la liquidité et réduire la pression de vente du marché. Les utilisateurs peuvent déposer L-Coin dans un contrat de jalonnement.
 
-| Projet | Description |
-|------|------|
-| [One API](https://github.com/songquanpeng/one-api) | Base du projet original |
-| [Midjourney-Proxy](https://github.com/novicezk/midjourney-proxy) | Prise en charge de l'interface Midjourney |
-
-### Outils d'accompagnement
-
-| Projet | Description |
-|------|------|
-| [neko-api-key-tool](https://github.com/Calcium-Ion/neko-api-key-tool) | Outil de recherche de quota d'utilisation avec une clé |
-| [new-api-horizon](https://github.com/Calcium-Ion/new-api-horizon) | Version optimisée haute performance de New API |
+| Niveau | Exigence de Jalonnement (L-Coin) | Réduction des Frais API | Avantages Premium |
+| --- | --- | --- | --- |
+| **Lv 1** | 0 | 100% (Prix Plein) | Aucun |
+| **Lv 2** | 1 000 | 95% de Réduction | Déverrouiller le canal de concurrence élevée |
+| **Lv 3** | 10 000 | 85% de Réduction | Droit de Participation IMO (Poids 1x) |
+| **Lv 4** | 50 000 | 70% de Réduction | Droit de Participation IMO (Poids 3x) + Marchés de Prédiction sans Frais |
+| **Whale** | 100 000 | Prix de Coût | Droit de Vote sur les Décisions Majeures de la Plateforme |
 
 ---
 
-## 💬 Aide et support
+## 6. Divulgation des Risques (Risk Disclosure)
 
-### 📖 Ressources de documentation
+L-Exchange est un produit fintech expérimental. Avant de participer, veuillez comprendre les risques suivants :
 
-| Ressource | Lien |
-|------|------|
-| 📘 FAQ | [FAQ](https://docs.newapi.pro/en/docs/support/faq) |
-| 💬 Interaction avec la communauté | [Canaux de communication](https://docs.newapi.pro/en/docs/support/community-interaction) |
-| 🐛 Commentaires sur les problèmes | [Commentaires sur les problèmes](https://docs.newapi.pro/en/docs/support/feedback-issues) |
-| 📚 Documentation complète | [Documentation officielle](https://docs.newapi.pro/en/docs) |
-
-### 🤝 Guide de contribution
-
-Bienvenue à toutes les formes de contribution!
-
-- 🐛 Signaler des bogues
-- 💡 Proposer de nouvelles fonctionnalités
-- 📝 Améliorer la documentation
-- 🔧 Soumettre du code
+1. **Risque de Volatilité des Actifs :** Le prix de L-Coin est entièrement déterminé par l'offre et la demande du marché, la plateforme ne garantit pas le remboursement du capital, et le prix peut fluctuer considérablement ou même tomber à zéro en peu de temps.
+2. **Risque Technique :** Bien que nous soyons basés sur l'architecture NewAPI mature, la couche de logique financière peut contenir des bugs inconnus.
+3. **Risque de Centralisation :** À ce stade, L-Exchange s'exécute sur une base de données centralisée (Layer 2). Bien que nous nous engagions à la transparence des données, cela dépend toujours de la crédibilité de l'opérateur de plateforme.
+4. **Risque Réglementaire :** Cette plateforme est limitée à l'échange technique et aux expériences économiques simulées, strictement interdite d'utilisation pour la collecte de fonds illégale, le blanchiment d'argent ou les services d'échange de monnaie fiduciaire.
 
 ---
 
-## 📜 Licence
+## 7. Conclusion (Conclusion)
 
-Ce projet est sous licence [GNU Affero General Public License v3.0 (AGPLv3)](./LICENSE).
+L-Exchange n'est pas seulement un magasin d'API, c'est le **Nasdaq de l'ère de l'IA**.
 
-Si les politiques de votre organisation ne permettent pas l'utilisation de logiciels sous licence AGPLv3, ou si vous souhaitez éviter les obligations open-source de l'AGPLv3, veuillez nous contacter à : [support@quantumnous.com](mailto:support@quantumnous.com)
+Dans cet écosystème, chaque requête `ChatCompletion` est un minage, chaque itération de modèle est une IPO, et chaque désaccord d'opinion est une transaction de pari.
 
----
+Rejoignez-nous, ne soyez pas seulement un consommateur d'IA. Devenez un **teneur de marché** de la puissance de calcul IA.
 
-## 🌟 Historique des étoiles
-
-<div align="center">
-
-[![Graphique de l'historique des étoiles](https://api.star-history.com/svg?repos=Calcium-Ion/new-api&type=Date)](https://star-history.com/#Calcium-Ion/new-api&Date)
-
-</div>
-
----
-
-<div align="center">
-
-### 💖 Merci d'utiliser New API
-
-Si ce projet vous est utile, bienvenue à nous donner une ⭐️ Étoile！
-
-**[Documentation officielle](https://docs.newapi.pro/en/docs)** • **[Commentaires sur les problèmes](https://github.com/Calcium-Ion/new-api/issues)** • **[Dernière version](https://github.com/Calcium-Ion/new-api/releases)**
-
-<sub>Construit avec ❤️ par QuantumNous</sub>
-
-</div>
+**L-Exchange Team**
+*In Code We Trust.*
